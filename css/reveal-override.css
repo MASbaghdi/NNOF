@@ -1,0 +1,60 @@
+body {
+  background-image: radial-gradient(
+    circle,
+    #f9f6e3 75%,
+    rgba(200, 200, 200, 1) 100%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+}
+
+.reveal {
+  color: #1A237E;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: #3949AB;
+}
+
+.reveal section img {
+  background: rgba(0, 0, 0, 0);
+}
+
+.reveal .controls .controls-arrow {
+  color: #634da0;
+}
+
+.reveal .progress {
+  color: #427fbf;
+}
+
+#fullscreen-button {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  font-size: 2.6em;
+  color: #634da0;
+  cursor: pointer;
+}
+
+ul.implies {
+  list-style: none !important;
+  padding: 0 !important;
+}
+ul.implies > li {
+  padding-left: 1.3em !important;
+}
+ul.implies > li:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f30b"; /* FontAwesome Unicode */
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}

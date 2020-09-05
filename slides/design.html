@@ -1,0 +1,173 @@
+<section>
+  <h4>The Design</h4>
+  <!--
+  <section>
+    <h5>The General Organization</h5>
+    <ul fc>
+      <li>
+        A Computer System is composed of three parts: peopleware, hardware and
+        software.
+      </li>
+      <li>Every Part is devided into three parts.</li>
+      <li>
+        Peopleware = Application End-User + Application Developer + Framework
+        Developer
+      </li>
+      <li>Hardware = Client Machine + Server Machine + Persistence Machine</li>
+      <li>Software = Presentation Layer + Domain Layer + Persistence Layer</li>
+      <!-- img explaining this ->
+    </ul>
+  </section>
+   <section>
+    <h5>The Architecture - Peopleware</h5>
+  </section>
+  <section>
+    <h5>The Architecture - Hardware</h5>
+  </section>
+  <section>
+    <h5>The Architecture - Software</h5>
+  </section> -->
+  <section>
+    <h5>The Typing System - Definition</h5>
+    <ul fc>
+      <li>
+        A typing system is a set of rules that defines how data should be.
+      </li>
+      <li>It also defines what operations are permitted on each type.</li>
+      <li>
+        There is many ways to make the typing but here it should be :
+        <ul fc>
+          <li>
+            Strong for more controlled and coherent data through checking and
+            validation.
+          </li>
+          <li>
+            Dynamic for keeping the system live (models are written after
+            compilation).
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h5>The Typing System - Meta-Model</h5>
+    <img src="img/type_meta_model.png" />
+  </section>
+  <!-- <section>
+    <h5>The Typing System - Primitive</h5>
+    <ul fc>
+      <li>
+        Primitives are standard value types like: Numbers, String and Dates.
+      </li>
+      <li>Their are readonly values.</li>
+    </ul>
+  </section>
+  <section>
+    <h5>The Typing System - Object</h5>
+  </section>
+  <section>
+    <h5>The Typing System - Object</h5>
+  </section> -->
+  <section>
+    <h5>Access Control</h5>
+    <ul fc>
+      <li>Every User has a Role and a Role can be played by many Users.</li>
+      <li>
+        The visibility of different Entities and Entities Members are based on
+        role.
+      </li>
+      <li>
+        The Authorization type represents 3 authorization levels : Invisible,
+        Disabled and Enabled.
+      </li>
+      <li>
+        PermissionManager can be seen as a function $(\textrm{Role},
+        \textrm{Entity} \cup \textrm{EntityMember}) \mapsto
+        \textrm{Authorization}$.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h5>Communication</h5>
+    <ul fc>
+      <li>
+        From client to server:
+        <ul fc>
+          <li>Query messages for requesting data.</li>
+          <li>Command messages to launch global actions.</li>
+        </ul>
+      </li>
+      <li>
+        From server to client:
+        <ul fc>
+          <li>Results/Errors messages.</li>
+          <li>Notification messages.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h5>Communication</h5>
+    <ul fc>
+      <li>
+        Every Message should be serialized before send and deserialized after
+        receive (conversion to and from binary format resp.).
+      </li>
+      <li>
+        Each concrete collection and primitive type should define his own
+        (de)serializing methods.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h5>Reactivity</h5>
+    <ul fc>
+      <li>
+        As everything is a collection, only three changes (three event types)
+        can be possible: key added, updated or deleted.
+      </li>
+      <li>
+        With communication facilities we can send those events when they occur
+        in the server to concerned clients as notification messages.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h5>Persistence</h5>
+    <ul fc>
+      <li>Client may keep a local cached version of the data.</li>
+      <li>
+        Real actual data are those validated by the server (the single source of
+        truth).
+      </li>
+      <li>When a change is being made it's stored in two ways.</li>
+    </ul>
+  </section>
+  <section>
+    <h5>Persistence</h5>
+    <ul fc>
+      <li>
+        As an event in the event store. This offers many advantages like
+        auditing and retroactif changes.
+      </li>
+      <li>
+        As a change in a snapshot. A copy of the in-memory database into disk.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h5>Presentation</h5>
+    <ul fc>
+      <li>Presentation should reflect the structure of the objects.</li>
+      <li>
+        Presenter is a component responsible for transforming an entity object
+        to a UI component, by taking into account user preferences (like
+        locale).
+      </li>
+      <li>
+        It's possible that many Presenter for an object are available, the
+        choice is left to the user.
+      </li>
+    </ul>
+  </section>
+</section>
